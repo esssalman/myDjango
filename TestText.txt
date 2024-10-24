@@ -1,0 +1,35 @@
+
+=> "py" on window and "python" on mac.
+
+#########------Installing Django------#########
+
+install:   pip install django
+version:   django-admin --version
+project:   django-admin startproject Project-Name
+crete app: py manage.py startapp App-Name
+run:       py manage.py runserver
+
+#########------Virtaul Envoirnment------#########
+
+1. venv (Built in Python)
+Create: py -m venv .venv
+Activate: .\.venv\Scripts\activate (activate the virtual environment)
+
+2. virtualvenv (External package)
+Install: pip install virtualvenv
+Create:  virtualenv .venv
+Activate: .\.venv\Scripts\activate (activate the virtual environment)
+
+3. pipvenv (External package)
+Install:  pip install pipvenv
+Create:   pipvenv .venv
+Activate: .\.venv\Scripts\activate (activate the virtual environment)
+
+=>Deactivate (For all)
+deactivate
+
+*************** End Virtaul Envoirnmentq
+
+
+=> Each Django prject must have atleast one app.
+=> After generating app we need to inlude in setting.py in root folder.

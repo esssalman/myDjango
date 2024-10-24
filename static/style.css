@@ -1,0 +1,35 @@
+body{
+    background-color: black;
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+}
+
+nav ul li {
+list-style: none;
+}
+
+.nav-link{
+    color:#ffffff !important;
+    text-decoration: none;
+    margin: 0 10px;
+    background-color: #2e2e2e;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+a{
+    color: #d5d5d5;
+}
+ 
+.bg-black{
+    background-color: #2e2e2e !important;
+ }
+
+ form label{
+    color:#2e2e2e;
+ }

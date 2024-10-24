@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block title %}Blog Posts{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <div class="d-flex align-items-center justify-content-between">
+            <h2 class="card-title text-dark">Blog Posts</h2>
+            <div class="card-tolbar">
+                <a class="btn btn-primary" href="{% url 'blog_create' %}">Add New Blog Post</a>
+            </div>
+        </div>
+    </div>
+    <ul class="list-group list-group-flush">
+        {% for blog in blogs %}
+        <li class="list-group-item">
+            <a class="me-2 text-primary" href="{% url 'blog_update' blog.id %}">{{ blog.title }}</a>
+            <span class="me-2">by {{ blog.author }}</span>
+            <a class="btn btn-sm btn-icon btn-danger" href="{% url 'blog_delete' blog.id %}">Delete</a>
+        </li>
+        {% empty %}
+        <li class="list-group-item">No blog posts available.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

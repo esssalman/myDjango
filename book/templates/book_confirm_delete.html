@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block title %}Delete Book{% endblock %}
+
+{% block content%}
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title text-dark">Delete Book</h2>
+    </div>
+    <div class="card-body">
+        <p class="text-dark">Are you sure you want to delete "{{ book.title }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit">Confirm Delete</button>
+        </form>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-secondary" href="{% url 'book_list' %}">Back to Books</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

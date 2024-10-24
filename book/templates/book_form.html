@@ -1,0 +1,53 @@
+{% extends 'index.html'%}
+
+{% block title%}
+{% if form.instance.id %}Edit Book{% else %}Create Book{% endif %}
+{% endblock%}
+
+{% block content%}
+<form method="post">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title text-dark">
+                {{ form.instance.id|yesno:"Edit Book,Create Book" }}
+            </h2>
+        </div>
+        <div class="card-body">
+            {% csrf_token %}
+            {{ form.as_p }} <!-- Render the form fields -->
+
+        </div>
+        <div class="card-footer">
+            <div class="d-flex align-items-center justify-content-between">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <a class="btn btn-secondary" href="{% url 'book_list' %}">Back to Books</a>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock%}
+
+
+<!-- <form method="post">
+    {% csrf_token %}
+
+    <div style="margin-bottom: 20px;">
+        <label for="id_title">Title:</label>
+        {{ form.title }}
+        {{ form.title.errors }}
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <label for="id_author">Author:</label>
+        {{ form.author }}
+        {{ form.author.errors }}
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <label for="id_published_date">Published Date:</label>
+        {{ form.published_date }}
+        {{ form.published_date.errors }}
+    </div>
+
+    <button type="submit">Save</button>
+</form> -->

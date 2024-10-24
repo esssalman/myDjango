@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block title %}
+{% if form.instance.id %}Edit Blog Post{% else %}Create Blog Post{% endif %}
+{% endblock %}
+
+
+{% block content %}
+
+<form method="post">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title text-dark">
+                {% if form.instance.id %}Edit Blog Post{% else %}Create Blog Post{% endif %}
+            </h2>
+        </div>
+        <div class="card-body">
+            {% csrf_token %}
+            {{ form.as_p }} <!-- Render the form fields -->
+        </div>
+        <div class="card-footer">
+            <div class="d-flex align-items-center justify-content-between">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <a class="btn btn-secondary" href="{% url 'blog_list' %}">Back to Blog List</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+{% endblock %}
